@@ -1,28 +1,65 @@
 body {
-  padding: 50px;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  background: #1f4851; }
 
-a {
-  color: #00B7FF; }
+#main-window {
+  display: block;
+  position: fixed;
+  padding: 2vw;
+  left: 20vw;
+  top: 0;
+  width: 76vw;
+  height: 100vh;
+  background: #1f4851; }
 
 #sidebar {
+  display: block;
+  position: fixed;
   left: 0;
   top: 0;
-  position: fixed;
-  height: 100vh;
   width: 20vw;
-  background-color: #009955; }
-
-#navigation {
-  width: 100%;
-  height: 20%;
-  position: relative;
-  top: 20%; }
-  #navigation ul {
-    margin: 0;
-    list-style: none; }
-  #navigation li {
-    display: block;
+  height: 100vh;
+  background: #009955; }
+  #sidebar #navigation {
+    float: left;
+    position: relative;
+    top: 20%;
     width: 100%;
-    height: 20%;
-    background-color: #22FF77; }
+    height: 20%; }
+    #sidebar #navigation ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+    #sidebar #navigation li {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 20%;
+      text-align: center;
+      font-size: 1em;
+      padding: 0;
+      background: #1f4851;
+      overflow: hidden;
+      z-index: 0; }
+      #sidebar #navigation li .tab-name {
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background: transparent; }
+      #sidebar #navigation li .slide-tab {
+        position: absolute;
+        right: 100%;
+        width: 100%;
+        height: 18px;
+        z-index: 1;
+        background: #22FF77;
+        pointer-events: none; }
+    #sidebar #navigation li:hover {
+      cursor: pointer; }
+    #sidebar #navigation #hobbies #hobbies-menu {
+      display: none;
+      width: 80%;
+      opacity: 0;
+      margin-left: -20%; }

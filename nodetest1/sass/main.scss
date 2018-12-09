@@ -1,41 +1,95 @@
-$font-stack: "Lucida Grande", Helvetica, Arial, sans-serif;
-$link-color: #00B7FF;
-$dark: #009955;
-$light: #22FF77;
+@import "_variables";
 
-body {
-  padding: 50px;
-  font: 20px $font-stack;
-  }
-  
-a {
-  color: $link-color;
+
+body{
+  background: $background;
 }
 
+
+///////// MAIN WINDOW zone defining starts here //////////
+#main-window {
+	display: block;
+  position: fixed;
+  padding: $mainmenu-padding;
+  left: $sidebar-width;
+  top: 0;
+  width: (100vw - $sidebar-width - (2 * $mainmenu-padding)); // screen minus sidebar width
+  height: 100vh;
+	background: $background;
+}
+//////////////////////////////////////////////////////////
+
+///////// SIDEBAR zone defining starts here //////////
 #sidebar {
+  display: block;
+  position: fixed;
   left: 0;
   top: 0;
-  position: fixed;
+  width: $sidebar-width;
   height: 100vh;
-  width: 20vw;
-  background-color:$dark;
-}
-#navigation {
-  width:100%;
-  height:20%;
-  position:relative;
-  top: 20%;
-
-  ul {
-    margin:0;
-    list-style: none;
-  }
-
-  li { 
-    display: block;
+  background: $dark;
+  
+  #navigation {
+    float: left;
+    position: relative;
+    top: $navmenu-position;
     width: 100%;
     height: 20%;
-    background-color:$light;
-  }
+  
+    ul {
+      margin:0;
+      padding:0;
+      list-style: none;
+    }
+  
+    li { 
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 20%;
+      text-align: center;
+      font-size: $small-font;
+      padding: 0;
+      background: $background;
+      overflow: hidden;
+      z-index: 0;
 
+      .tab-name {
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background: transparent;
+      }
+
+      .slide-tab{
+        position: absolute;
+        right: 100%;
+        width: 100%;
+        height: 18px;
+        z-index: 1;
+        background: $light;
+        pointer-events: none;
+      }
+
+    }
+
+    li:hover{
+      cursor: pointer;
+    }
+
+    #hobbies{
+      #hobbies-menu{
+        display: none;
+        width: 80%;
+        opacity: 0;
+        margin-left: -20%;
+      }
+    }
+
+  }
 }
+
+//////////////////////////////////////////////////////////

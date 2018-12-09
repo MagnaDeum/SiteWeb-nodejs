@@ -1,0 +1,13 @@
+#home {
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  float: left;
+  display: block;
+  position: relative;
+  padding: 20px;
+  background: white; }
+  #home h1 {
+    font: 2em "Lucida Grande", Helvetica, Arial, sans-serif; }
+  #home pre {
+    font: 1em "Lucida Grande", Helvetica, Arial, sans-serif; }

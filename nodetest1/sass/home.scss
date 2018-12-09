@@ -1,0 +1,21 @@
+@import "_variables";
+
+#home{
+    // centering the box in main window div, slightly  towards top
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // end
+
+    float: left;
+    display: block;
+    position: relative;
+    padding: 20px;
+    background: $content-background;
+    h1 {
+        font: $big-font $font-stack;
+    }
+    pre {
+        font: $small-font $font-stack;
+    }
+}
