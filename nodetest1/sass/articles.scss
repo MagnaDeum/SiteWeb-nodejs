@@ -1,6 +1,6 @@
 @import "_variables";
 
-#home{
+#articles{
     // centering the box in main window div, slightly  towards top
     top: 20%;
     left: 50%;
@@ -10,12 +10,12 @@
     float: left;
     display: block;
     position: relative;
-    padding: 20px;
+    padding: 50px;
     background: $content-background;
     h1 {
-        font: $big-font $font-stack;
+        font: $big-font-size $font-stack;
     }
     pre {
-        font: $small-font $font-stack;
+        font: $small-font-size $font-stack;
     }
 }

@@ -1,0 +1,13 @@
+block main-window
+  link(rel='stylesheet', href='/stylesheets/music.css')
+  #music
+    h1
+      | Music
+    pre
+      | In my spare time (quite rare these days) I practice guitar. I also try to create music content with music editors such as FL Studio.
+      | Here you can find some of my (not so catastrophic) musics. (Warning : some of them might be loud)
+      | <br>
+      div
+        ul#music-list
+          script var mp3Names = "#{mp3Names}";
+            

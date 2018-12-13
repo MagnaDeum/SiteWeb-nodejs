@@ -25,6 +25,7 @@ $(".tab-name").on({
 // slide effect on drop down menu
 $("#hobbies").on({
     mouseenter: function(){
+        $("#hobbies").css("background", "none");
         $("#hobbies-menu").css("display", "block");
         $("#hobbies-menu").stop().animate({
             opacity: "1",
@@ -39,9 +40,10 @@ $("#hobbies").on({
             opacity: "0",
             marginLeft: "-20%",
             },
-            250,
+            100,
             function(){ 
                 $("#hobbies-menu").css("display", "none"); 
+                $("#hobbies").css("background", "rgb(31, 72, 81)"); // has to be the value of $background sass variable
             }
         );
     }

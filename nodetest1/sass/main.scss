@@ -1,5 +1,9 @@
 @import "_variables";
 
+html {
+  font-size: $root-font-size;
+  background: $background;
+}
 
 body{
   background: $background;
@@ -28,7 +32,8 @@ body{
   width: $sidebar-width;
   height: 100vh;
   background: $dark;
-  
+  opacity: 0.8;
+
   #navigation {
     float: left;
     position: relative;
@@ -46,14 +51,16 @@ body{
       display: block;
       position: relative;
       text-align: center;
-      font-size: $small-font;
+      font: $menu-big-font $font-stack;
       padding: 0;
       background: $background;
       overflow: hidden;
       z-index: 0;
 
       .tab-name {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
         float: left;
         width: 100%;
@@ -85,6 +92,9 @@ body{
         opacity: 0;
         margin-left: -20%;
         float:left;
+        li{
+          font: $menu-small-font $font-stack;
+        }
       }
     }
 

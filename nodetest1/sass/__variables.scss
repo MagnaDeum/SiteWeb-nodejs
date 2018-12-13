@@ -1,7 +1,13 @@
 // fonts
 $font-stack: "Lucida Grande", Helvetica, Arial, sans-serif;
-$big-font: 2em;
-$small-font: 1em;
+// for doc
+$root-font-size: 10px;
+$big-font-size: 3rem;
+$mid-font-size: 2.3rem;
+$small-font-size: 1.5rem;
+// for menu
+$menu-big-font: 2.3rem;
+$menu-small-font: 1.9rem;
 
 // colors
 $link-color: #00B7FF;
@@ -12,6 +18,6 @@ $light: #22FF77;
 
 // div positions and sizes
 $mainmenu-padding: 2vw;
-$sidebar-width: 20vw;
+$sidebar-width: 15vw;
 $navmenu-position: 20%;
 $navmenu-height: 15vh;

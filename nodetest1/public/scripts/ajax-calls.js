@@ -1,5 +1,5 @@
-// get the home page
-$("#about").click(function(){
+// get the about page
+$("#about-tab").click(function(){
     $.ajax({
         type: 'GET',
         url: "/about",
@@ -12,3 +12,54 @@ $("#about").click(function(){
         dataType: 'html'
     });
 });
+
+// get the articles page
+$("#articles-tab").click(function(){
+    $.ajax({
+        type: 'GET',
+        url: "/articles",
+        success: function(data){
+                    $('#main-window').html(data);
+                    $('#main-window').css("opacity", "0");
+                    $('#main-window').css("margin-top", "1%");
+                    $('#main-window').animate({marginTop:"-=1%", opacity:"1"},400);
+                    },
+        dataType: 'html'
+    });
+});
+
+// get the music page
+$("#music-tab").click(function(){
+    $.ajax({
+        type: 'GET',
+        url: "/music",
+        success: function(data){
+                    $('#main-window').html(data);
+                    $('#main-window').css("opacity", "0");
+                    $('#main-window').css("margin-top", "1%");
+                    $('#main-window').animate({marginTop:"-=1%", opacity:"1"},400);
+                    // fill the music list
+                    fillMusicList(mp3Names);
+                    },
+        dataType: 'html'
+    });
+});
+
+function fillMusicList(mp3Names){
+    mp3Names = mp3Names.split(",");
+    for(i=0; i<mp3Names.length; i++){
+        $("#music-list").append(
+            $('<li>').append(
+                $('<div>').addClass("mp3player")
+                .append(
+                    mp3Names[i]
+                )
+                .append(
+                    $('<audio>').attr("controls", "controls").attr("preload", "none").append(
+                        $('<source>').attr("src","../resources/mp3/"+mp3Names[i]).attr("type", "audio/mp3")
+                    )
+                )
+            )
+        );
+    }
+};

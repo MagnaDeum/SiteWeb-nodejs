@@ -1,4 +1,4 @@
-#home {
+#about {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -7,7 +7,7 @@
   position: relative;
   padding: 50px;
   background: white; }
-  #home h1 {
+  #about h1 {
     font: 3rem "Lucida Grande", Helvetica, Arial, sans-serif; }
-  #home pre {
+  #about pre {
     font: 1.5rem "Lucida Grande", Helvetica, Arial, sans-serif; }
