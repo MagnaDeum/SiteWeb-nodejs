@@ -38,28 +38,31 @@ $("#music-tab").click(function(){
                     $('#main-window').css("opacity", "0");
                     $('#main-window').css("margin-top", "1%");
                     $('#main-window').animate({marginTop:"-=1%", opacity:"1"},400);
+
                     // fill the music list
-                    fillMusicList(mp3Names);
-                    },
+                    mp3Names = mp3Names.split(",");
+                    for(i=0; i<mp3Names.length; i++){
+                        $("#music-list").append(
+                            $('<li>').append(
+                                $('<div>').addClass("mp3player")
+                                .append(
+                                    $('<div>').addClass("musicName").append(
+                                        mp3Names[i].split(".")[0]
+                                    )
+                                )
+                                .append(
+                                    $('<audio>').attr("controls", "controls").attr("preload", "none").append(
+                                        $('<source>').attr("src","../resources/mp3/"+mp3Names[i]).attr("type", "audio/mp3")
+                                    )
+                                )
+                            )
+                        );
+                    }
+                    
+                    // remove the variable holding the names from the html
+                    $("#music-list script").remove();
+                },
         dataType: 'html'
     });
 });
 
-function fillMusicList(mp3Names){
-    mp3Names = mp3Names.split(",");
-    for(i=0; i<mp3Names.length; i++){
-        $("#music-list").append(
-            $('<li>').append(
-                $('<div>').addClass("mp3player")
-                .append(
-                    mp3Names[i]
-                )
-                .append(
-                    $('<audio>').attr("controls", "controls").attr("preload", "none").append(
-                        $('<source>').attr("src","../resources/mp3/"+mp3Names[i]).attr("type", "audio/mp3")
-                    )
-                )
-            )
-        );
-    }
-};

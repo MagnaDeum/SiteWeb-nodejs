@@ -1,21 +1,52 @@
 @import "_variables";
 
 #music{
-    // centering the box in main window div, slightly  towards top
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    // end
-
-    float: left;
-    display: block;
-    position: relative;
-    padding: 50px;
+    display: inline-block;
+    padding: $content-inner-padding;
     background: $content-background;
+
     h1 {
         font: $big-font-size $font-stack;
+        text-align: left;
     }
     pre {
         font: $small-font-size $font-stack;
+        text-align: left;
+    }
+
+    #music-list {
+        text-align: left;
+        list-style: none;
+        margin: 0;
+        padding: 30px;
+
+        li .mp3player {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 7px 7px;
+
+            background-color: none;
+
+            .musicName{
+                display: inline-block;
+                width: 50%;
+                // tab
+                padding-left: 20px;
+            }
+
+            // audio player
+            audio {
+                display: inline-block;
+                width: 50%;
+            }
+        }
+
+        li .mp3player:hover{
+            background-color: $light;
+            -webkit-transition: background-color 0.2s linear;
+            -ms-transition: background-color 0.2s linear;
+            transition: background-color 0.2s linear;
+        }
     }
 }

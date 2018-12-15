@@ -16,8 +16,13 @@ $content-background: rgb(255,255,255);
 $dark: #009955;
 $light: #22FF77;
 
-// div positions and sizes
-$mainmenu-padding: 2vw;
+// menu divs positions and sizes
+$mainmenu-padding-w: 2vw;
+$mainmenu-padding-h: 5vh;
 $sidebar-width: 15vw;
 $navmenu-position: 20%;
 $navmenu-height: 15vh;
+
+
+// content div positions and sizes
+$content-inner-padding: 50px;

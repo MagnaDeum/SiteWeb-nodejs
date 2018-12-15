@@ -12,14 +12,21 @@ body{
 
 ///////// MAIN WINDOW zone defining starts here //////////
 #main-window {
-	display: block;
+  display: block;
+  float: left;
   position: fixed;
-  padding: $mainmenu-padding;
+  padding: $mainmenu-padding-h $mainmenu-padding-w;
   left: $sidebar-width;
   top: 0;
-  width: (100vw - $sidebar-width - (2 * $mainmenu-padding)); // screen minus sidebar width
-  height: 100vh;
-	background: $background;
+  width: (100vw - $sidebar-width - (2 * $mainmenu-padding-w)); // screen minus sidebar width
+  height: (100vh - (2 * $mainmenu-padding-h));
+  background: $background;
+  text-align: center;
+  
+  // overflow
+  max-width: (100vw - $sidebar-width - (2 * $mainmenu-padding-w));
+  max-height: (100vh - (2 * $mainmenu-padding-h));
+  overflow: auto;
 }
 //////////////////////////////////////////////////////////
 
