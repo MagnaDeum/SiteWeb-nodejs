@@ -1,10 +1,10 @@
 #about {
   display: inline-block;
   padding: 50px;
-  background: white; }
+  background: #97aabd; }
   #about h1 {
-    font: 3rem "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 4rem "Lucida Grande", Helvetica, Arial, sans-serif;
     text-align: left; }
   #about pre {
     text-align: left;
-    font: 1.5rem "Lucida Grande", Helvetica, Arial, sans-serif; }
+    font: 2rem "Lucida Grande", Helvetica, Arial, sans-serif; }

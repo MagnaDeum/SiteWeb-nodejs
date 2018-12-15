@@ -1,20 +1,23 @@
 // fonts
 $font-stack: "Lucida Grande", Helvetica, Arial, sans-serif;
+$font-color: #ffffff;
 // for doc
 $root-font-size: 10px;
-$big-font-size: 3rem;
-$mid-font-size: 2.3rem;
-$small-font-size: 1.5rem;
+$big-font-size: 4rem;
+$mid-font-size: 3rem;
+$small-font-size: 2rem;
 // for menu
 $menu-big-font: 2.3rem;
 $menu-small-font: 1.9rem;
 
 // colors
-$link-color: #00B7FF;
-$background: rgb(31, 72, 81);
-$content-background: rgb(255,255,255);
-$dark: #009955;
-$light: #22FF77;
+$link-color: #110022;
+$content-background: #97aabd;
+$darker: #314455;
+$dark:#644e5b;
+$mid:#9e5a63;
+$light:#c96567;
+$lighter: #97aabd;
 
 // menu divs positions and sizes
 $mainmenu-padding-w: 2vw;

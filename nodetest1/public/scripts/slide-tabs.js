@@ -43,7 +43,7 @@ $("#hobbies").on({
             100,
             function(){ 
                 $("#hobbies-menu").css("display", "none"); 
-                $("#hobbies").css("background", "rgb(31, 72, 81)"); // has to be the value of $background sass variable
+                $("#hobbies").css("background", "#644e5b"); // has to be the value of $background sass variable
             }
         );
     }

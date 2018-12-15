@@ -1,12 +1,12 @@
 #music {
   display: inline-block;
   padding: 50px;
-  background: white; }
+  background: #97aabd; }
   #music h1 {
-    font: 3rem "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 4rem "Lucida Grande", Helvetica, Arial, sans-serif;
     text-align: left; }
   #music pre {
-    font: 1.5rem "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 2rem "Lucida Grande", Helvetica, Arial, sans-serif;
     text-align: left; }
   #music #music-list {
     text-align: left;
@@ -27,7 +27,7 @@
         display: inline-block;
         width: 50%; }
     #music #music-list li .mp3player:hover {
-      background-color: #22FF77;
+      background-color: #c96567;
       -webkit-transition: background-color 0.2s linear;
       -ms-transition: background-color 0.2s linear;
       transition: background-color 0.2s linear; }
