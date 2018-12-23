@@ -29,4 +29,15 @@ router.get('/music', function(req, res, next) {
   res.render('music', {mp3Names: mp3Names});
 });
 
+/* GET art page. */
+router.get('/art', function(req, res, next) {
+  var dir = resDir + '/jpg';
+  var jpgNames = new Array();
+  // get number of jpg files
+  fs.readdirSync(dir).forEach(file => {
+    jpgNames.push(file);
+  })
+  res.render('art', {jpgNames: jpgNames});
+});
+
 module.exports = router;

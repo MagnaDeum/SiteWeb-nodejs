@@ -49,12 +49,12 @@ $("#hobbies").on({
     }
 });
 
-$("#hobbies-menu").on({
-    mouseenter: function(){
+$("#hobbies").on({
+    mouseover: function(){
         $("#hobbies .tab-name").first().next(".slide-tab").stop().css("opacity","1");
         $("#hobbies .tab-name").first().next(".slide-tab").stop().css("right","0");
     },
-    mouseleave: function(){
+    mouseout: function(){
         $("#hobbies .tab-name").first().next(".slide-tab").stop().animate({
             opacity: "0",
             right: "100%",

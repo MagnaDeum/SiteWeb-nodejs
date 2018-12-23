@@ -66,3 +66,31 @@ $("#music-tab").click(function(){
     });
 });
 
+
+// get the art page
+$("#art-tab").click(function(){
+    $.ajax({
+        type: 'GET',
+        url: "/art",
+        success: function(data){
+                    $('#main-window').html(data);
+                    $('#main-window').css("opacity", "0");
+                    $('#main-window').css("margin-top", "1%");
+                    $('#main-window').animate({marginTop:"-=1%", opacity:"1"},400);
+                    // fill the music list
+                    jpgNames = jpgNames.split(",");
+                    for(i=0; i<jpgNames.length; i++){
+                        $("#carousel-data").append(
+                            $('<li>').append(
+                                $('<img>').attr("src","../resources/jpg/"+jpgNames[i])
+                            )
+                        );
+                    }
+                    
+                    // remove the variable holding the names from the html
+                    $(".carousel-wrapper script").remove();
+                },
+        dataType: 'html'
+    });
+});
+

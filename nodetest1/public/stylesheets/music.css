@@ -18,6 +18,7 @@
       align-items: center;
       position: relative;
       padding: 7px 7px;
+      cursor: pointer;
       background-color: none; }
       #music #music-list li .mp3player .musicName {
         display: inline-block;
