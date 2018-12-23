@@ -80,15 +80,16 @@ $("#art-tab").click(function(){
                     // fill the music list
                     jpgNames = jpgNames.split(",");
                     for(i=0; i<jpgNames.length; i++){
-                        $("#carousel-data").append(
-                            $('<li>').append(
+                        $("#carousel").append(
+                            $('<div>').append(
                                 $('<img>').attr("src","../resources/jpg/"+jpgNames[i])
                             )
                         );
                     }
-                    
+                    // call the js to create the carousel
+                    initCarousel();
                     // remove the variable holding the names from the html
-                    $(".carousel-wrapper script").remove();
+                    $("#carousel-wrapper script").remove();
                 },
         dataType: 'html'
     });

@@ -3,11 +3,9 @@ block main-window
   #art
     h1
       | Art
-    div.carousel-wrapper
+    div#viewport
+      img#selected(src="")
+    div#carousel-wrapper
       script var jpgNames = "#{jpgNames}"
-      div.carousel
-        ul#carousel-data
-      a.carousel-control-prev(href="#") &lsaquo;
-      a.carousel-control-next(href="#") &rsaquo;
-    script(src='/scripts/jquery.jcarousel.min.js')
+      div#carousel
     script(src='/scripts/carousel.js')
