@@ -18,6 +18,48 @@ function initCarousel(){
 }
 
 
+// helper function
+function centerImg(){
+    // set main view
+    setViewport();
+
+    // reset state
+    $("#carousel").find("img").each(function(idx, val){
+        $(this).addClass("hidden");
+    });
+
+    translate = $(".img-container").width() * (currCenter-1);
+    translate = translate * (-1);
+    // shift containers
+    $("#carousel").find(".img-container").each(function(idx, val){
+        $(this).css("transform", "translate("+translate+"px,0)");
+    });
+
+    // set image sizes for left/center/rigth
+    if(currCenter > 0){
+        images[currCenter-1].removeClass().addClass("left");
+    }
+
+    images[currCenter].removeClass().addClass("center");
+
+    if(currCenter < images.length-1){
+        images[currCenter+1].removeClass().addClass("right");
+    }
+}
+
+// helper function
+function setViewport(){
+    var src = images[currCenter].attr("src");
+    var image = $("#viewport img");
+    image.animate({opacity : 0}, 50, function(){
+        image.attr('src', src);
+    });
+    image.animate({opacity : 1}, 600);
+}
+
+
+/************************EXECUTABLE JS***********************/
+
 // on click select image
 $("#carousel-wrapper").on("click", "#carousel img", function(){
     // do nothing if already centered
@@ -51,47 +93,23 @@ $("#carousel-wrapper").on("click", "#right-arrow", function(){
 });
 
 
-// helper function
-function centerImg(){
 
-    // reset state
-    $("#carousel").find("img").each(function(idx, val){
-        $(this).addClass("hidden");
-    });
-
-    translate = $(".img-container").width() * (currCenter-1);
-    translate = translate * (-1);
-    // shift containers
-    $("#carousel").find(".img-container").each(function(idx, val){
-        $(this).css("transform", "translate("+translate+"px,0)");
-    });
-
-    // set image sizes for left/center/rigth
-    if(currCenter > 0){
-        images[currCenter-1].removeClass().addClass("left");
+// fullscreen viewport
+$("#viewport").on("click", "img", function(){
+    // do nothing if already centered
+    console.log($(this))
+    if( ! $(this).hasClass("fullscreen")){
+        $(this).removeClass().addClass("fullscreen");
+        $("#carousel-wrapper").addClass("fullscreen");
+        $("#main-window").addClass("retract");
+        $("#sidebar").css("display","none");
+    }else{
+        $(this).removeClass().addClass("selected");
+        $("#carousel-wrapper").removeClass("fullscreen");
+        $("#main-window").removeClass("retract");
+        $("#sidebar").css("display","block");
     }
-
-    images[currCenter].removeClass().addClass("center");
-
-    if(currCenter < images.length-1){
-        images[currCenter+1].removeClass().addClass("right");
-    }
-
-    // set main view
-    setViewport();
-}
-
-// helper function
-function setViewport(){
-    var src = images[currCenter].attr("src");
-    var image = $("#viewport img");
-    image.fadeOut('fast', function () {
-        image.attr('src', src);
-        image.fadeIn('fast');
-    });
-}
-
-
+});
 
 
 
