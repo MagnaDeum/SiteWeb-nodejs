@@ -1,11 +1,11 @@
 block main-window
   link(rel='stylesheet', href='/stylesheets/art.css')
   #art
-    h1
-      | Art
     div#viewport
       img#selected(src="")
     div#carousel-wrapper
       script var jpgNames = "#{jpgNames}"
+      p#left-arrow &larr;
+      p#right-arrow &rarr;
       div#carousel
     script(src='/scripts/carousel.js')

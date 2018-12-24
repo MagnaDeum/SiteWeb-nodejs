@@ -81,7 +81,7 @@ $("#art-tab").click(function(){
                     jpgNames = jpgNames.split(",");
                     for(i=0; i<jpgNames.length; i++){
                         $("#carousel").append(
-                            $('<div>').append(
+                            $('<div>').addClass("img-container").append(
                                 $('<img>').attr("src","../resources/jpg/"+jpgNames[i])
                             )
                         );

@@ -7,18 +7,14 @@ var currCenter;
 // init state of carousel
 function initCarousel(){
     
+    currCenter = 0;
+
     // add to array
     $("#carousel").find("img").each(function(idx, val){
         images.push($(this));
         $(this).addClass("hidden");
-    });
-
-    // init first 3 images and hide the rest
-    currCenter = 0;
-    centerImg(currCenter);
-
-    // set viewport
-    setViewport(currCenter);
+    })
+    .promise().then(centerImg);
 }
 
 
@@ -29,36 +25,73 @@ $("#carousel-wrapper").on("click", "#carousel img", function(){
         if($(this).hasClass("left")){
             // shift right
             currCenter--;
-            centerImg(currCenter);
+            centerImg();
         }else{
             // shift left
             currCenter++;
-            centerImg(currCenter);
+            centerImg();
         }
+    }
+});
+
+// same for left/right buttons
+$("#carousel-wrapper").on("click", "#left-arrow", function(){
+    // can't go further left
+    if(currCenter > 0){
+        currCenter--;
+        centerImg();
+    }
+});
+$("#carousel-wrapper").on("click", "#right-arrow", function(){
+    // can't go further right
+    if(currCenter < images.length-1){
+        currCenter++;
+        centerImg();
     }
 });
 
 
 // helper function
-function centerImg(idx){
+function centerImg(){
+
+    // reset state
     $("#carousel").find("img").each(function(idx, val){
         $(this).addClass("hidden");
     });
 
-    if(idx > 0){
-        images[idx-1].removeClass().addClass("left");
+    translate = $(".img-container").width() * (currCenter-1);
+    translate = translate * (-1);
+    // shift containers
+    $("#carousel").find(".img-container").each(function(idx, val){
+        $(this).css("transform", "translate("+translate+"px,0)");
+    });
+
+    // set image sizes for left/center/rigth
+    if(currCenter > 0){
+        images[currCenter-1].removeClass().addClass("left");
     }
 
-    images[idx].removeClass().addClass("center");
-    setViewport(idx);
+    images[currCenter].removeClass().addClass("center");
 
-    if(idx < images.length-1){
-        images[idx+1].removeClass().addClass("right");
+    if(currCenter < images.length-1){
+        images[currCenter+1].removeClass().addClass("right");
     }
+
+    // set main view
+    setViewport();
 }
 
 // helper function
-function setViewport(idx){
-    var src = images[idx].attr("src");
-    $("#viewport img").attr("src", src);
+function setViewport(){
+    var src = images[currCenter].attr("src");
+    var image = $("#viewport img");
+    image.fadeOut('fast', function () {
+        image.attr('src', src);
+        image.fadeIn('fast');
+    });
 }
+
+
+
+
+

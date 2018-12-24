@@ -13,33 +13,67 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50vw;
-    height: 50vh; }
+    width: 60vw;
+    height: 65vh; }
     #art #viewport img {
       display: inline-block;
-      max-width: 50vw;
-      max-height: 50vh; }
+      max-width: 48vw;
+      max-height: 58.5vh; }
   #art #carousel-wrapper {
-    position: relative; }
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #644e5b;
+    overflow: hidden;
+    width: 30vw;
+    height: 15vh; }
+    #art #carousel-wrapper #left-arrow, #art #carousel-wrapper #right-arrow {
+      position: absolute;
+      z-index: 10;
+      font-size: 3em;
+      font-weight: 950;
+      display: block;
+      background: #9e5a63;
+      text-align: center;
+      border-radius: 20px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer; }
+    #art #carousel-wrapper #left-arrow:hover, #art #carousel-wrapper #right-arrow:hover {
+      background: #c96567; }
+    #art #carousel-wrapper #left-arrow {
+      left: 0; }
+    #art #carousel-wrapper #right-arrow {
+      right: 0; }
     #art #carousel-wrapper #carousel {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: left;
       position: relative;
-      padding: 7px 7px;
-      cursor: pointer; }
-      #art #carousel-wrapper #carousel img {
-        display: inline-block;
-        margin-left: 0px;
-        max-width: 200px;
-        max-height: 140px; }
-      #art #carousel-wrapper #carousel .hidden {
-        opacity: 0;
-        width: 0; }
-      #art #carousel-wrapper #carousel .left, #art #carousel-wrapper #carousel .right {
-        opacity: 0.7;
-        max-width: 150px;
-        max-height: 105px; }
-      #art #carousel-wrapper #carousel .center {
-        margin: 0px 20px;
-        border: 1px solid black; }
+      float: left; }
+      #art #carousel-wrapper #carousel .img-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        cursor: pointer;
+        width: 10vw;
+        height: 15vh;
+        transition: transform 0.5s ease-out; }
+        #art #carousel-wrapper #carousel .img-container img {
+          display: inline-block;
+          width: 80%;
+          height: 80%; }
+        #art #carousel-wrapper #carousel .img-container .hidden {
+          opacity: 0; }
+        #art #carousel-wrapper #carousel .img-container .left, #art #carousel-wrapper #carousel .img-container .right {
+          opacity: 0.5; }
+        #art #carousel-wrapper #carousel .img-container .center {
+          opacity: 1;
+          border: 5px solid #97aabd; }
