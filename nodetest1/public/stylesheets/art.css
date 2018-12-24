@@ -30,24 +30,24 @@
     margin: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    background: #97aabd;
+    background: rgba(255, 255, 255, 0.3);
     overflow: hidden;
     width: 30vw;
-    height: 15vh; }
+    height: 12vh; }
     #art #carousel-wrapper #left-arrow, #art #carousel-wrapper #right-arrow {
       position: absolute;
       z-index: 10;
       font-size: 3em;
       font-weight: 950;
       display: block;
-      background: #c96567;
+      background: #314455;
       text-align: center;
       border-radius: 20px;
       padding: 0;
       margin: 0;
       cursor: pointer; }
     #art #carousel-wrapper #left-arrow:hover, #art #carousel-wrapper #right-arrow:hover {
-      background: #644e5b; }
+      background: #97aabd; }
     #art #carousel-wrapper #left-arrow {
       left: 1%; }
     #art #carousel-wrapper #right-arrow {
@@ -66,12 +66,12 @@
         overflow: hidden;
         cursor: pointer;
         width: 10vw;
-        height: 15vh;
+        height: 12vh;
         transition: transform 0.5s ease-out; }
         #art #carousel-wrapper #carousel .img-container img {
           display: inline-block;
-          width: 80%;
-          height: 80%;
+          width: 90%;
+          height: 90%;
           transition: opacity 0.5s ease; }
         #art #carousel-wrapper #carousel .img-container .hidden {
           opacity: 0; }
@@ -79,11 +79,10 @@
           opacity: 0.3; }
         #art #carousel-wrapper #carousel .img-container .center {
           opacity: 1;
-          border: 5px solid #97aabd; }
+          border: 5px solid white; }
   #art .fullscreen {
     position: absolute !important;
     bottom: 0 !important;
     left: 50vw !important;
     transform: translate(-50%, 0);
-    background: rgba(255, 255, 255, 0.3) !important;
     z-index: 2000; }

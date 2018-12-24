@@ -39,7 +39,7 @@
         margin: 0;
         left: 50%;
         transform: translate(-50%,0);
-        background: $content-background;
+        background: rgba(255,255,255,0.3);
 
         overflow: hidden;
         width: $carousel-width;
@@ -52,7 +52,7 @@
             font-size: 3em;
             font-weight: 950;
             display: block;
-            background: $light;
+            background: $darker;
             text-align: center;
             border-radius: 20px;
             padding: 0;
@@ -61,7 +61,7 @@
         }
 
         #left-arrow:hover, #right-arrow:hover {
-            background: $dark;
+            background: $lighter;
         }
 
         #left-arrow {
@@ -92,8 +92,8 @@
 
                 img {
                     display: inline-block;
-                    width: 80%;
-                    height: 80%;
+                    width: 90%;
+                    height: 90%;
                     transition: opacity 0.5s ease;
                 }
 
@@ -107,7 +107,7 @@
 
                 .center {
                     opacity: 1;
-                    border: 5px solid $lighter;
+                    border: 5px solid white;
                 }
             }
         }
@@ -119,7 +119,6 @@
         bottom: 0 !important;
         left: 50vw !important;
         transform: translate(-50%,0);
-        background: rgba(255,255,255,0.3) !important;
         z-index: 2000;
     }
 }
